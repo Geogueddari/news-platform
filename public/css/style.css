@@ -1,0 +1,37 @@
+.card {
+  border: 2px solid transparent;
+  animation: hoverGrowReverse 0.3s ease-out forwards;
+}
+
+@keyframes hoverGrow {
+  0% {
+    transform: scale(1);
+    border-color: transparent;
+  }
+  100% {
+    transform: scale(1.03);
+    border-color: #007bff;
+  }
+}
+
+@keyframes hoverGrowReverse {
+  0% {
+    transform: scale(1.03);
+    border-color: #007bff;
+  }
+  100% {
+    transform: scale(1);
+    border-color: transparent;
+  }
+}
+
+.card:hover {
+  animation: hoverGrow 0.4s ease-out forwards;
+
+}
+
+.card:not(:hover) {
+  animation: hoverGrowReverse 0.4s ease-out forwards;
+}
+
+
