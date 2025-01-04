@@ -1,12 +1,11 @@
-// Fonction pour récupérer et afficher les derniers articles
 async function fetchLatestNews() {
   try {
-        const response = await fetch('/api/news');
+    const response = await fetch("https://dummyjson.com/posts");
     const data = await response.json();
     displayNews(data.posts);
   } catch (error) {
-        console.error('Erreur:', error);
-        showError('Impossible de charger les articles');
+    console.error("Erreur:", error);
+    showError("Impossible de charger les articles");
   }
 }
 
@@ -16,7 +15,6 @@ async function fetchUser(userId) {
   return data;
 }
 
-// TODO: Question 1 - Compléter la fonction displayNews
 function displayNews(news) {
   const container = document.getElementById("news-container");
   news.forEach(async (post) => {
@@ -67,6 +65,11 @@ function displayNews(news) {
                   <li>
                       <a class="dropdown-item  text-primary d-flex align-items-center" href="#">
                           <i class="bi bi-link-45deg me-2"></i> Copier le lien
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item d-flex align-items-center" href="#">
+                          <i class="bi bi-info-circle me-2"></i>infos
                       </a>
                   </li>
               </ul>
@@ -126,7 +129,7 @@ function displayNews(news) {
 
         if (icon.classList.contains("bi-star")) {
           icon.classList.remove("bi-star");
-          icon.classList.add("bi-star-fill"); // Icône étoile pleine
+          icon.classList.add("bi-star-fill");
         } else {
           icon.classList.remove("bi-star-fill");
           icon.classList.add("bi-star");
@@ -141,12 +144,10 @@ function displayNews(news) {
           this.closest(".card-footer").querySelector(".dislike-btn i");
 
         if (this.classList.contains("liked")) {
-          // Retirer le like
           this.classList.remove("liked");
           icon.classList.remove("bi-hand-thumbs-up-fill");
           icon.classList.add("bi-hand-thumbs-up");
         } else {
-          // Ajouter un like et retirer le dislike
           this.classList.add("liked");
           icon.classList.remove("bi-hand-thumbs-up");
           icon.classList.add("bi-hand-thumbs-up-fill");
@@ -169,12 +170,10 @@ function displayNews(news) {
           this.closest(".card-footer").querySelector(".like-btn i");
 
         if (this.classList.contains("disliked")) {
-          // Retirer le dislike
           this.classList.remove("disliked");
           icon.classList.remove("bi-hand-thumbs-down-fill");
           icon.classList.add("bi-hand-thumbs-down");
         } else {
-          // Ajouter un dislike et retirer le like
           this.classList.add("disliked");
           icon.classList.remove("bi-hand-thumbs-down");
           icon.classList.add("bi-hand-thumbs-down-fill");
@@ -195,12 +194,10 @@ function displayNews(news) {
         const icon = this.querySelector("i");
 
         if (this.classList.contains("commented")) {
-          // Retirer le style des commentaires
           this.classList.remove("commented");
           icon.classList.remove("bi-chat-fill");
           icon.classList.add("bi-chat");
         } else {
-          // Ajouter le style des commentaires
           this.classList.add("commented");
           icon.classList.remove("bi-chat");
           icon.classList.add("bi-chat-fill");
@@ -210,12 +207,10 @@ function displayNews(news) {
   });
 }
 
-// TODO: Question 2 - Créer une fonction pour gérer les erreurs
 function showError(message) {
-  // Afficher un message d'erreur avec Bootstrap
+
 }
 
-// Initialisation
 document.addEventListener("DOMContentLoaded", fetchLatestNews);
 
 function formatDate(date) {
