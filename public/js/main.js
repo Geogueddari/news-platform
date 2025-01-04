@@ -20,7 +20,7 @@ function displayNews(news) {
   news.forEach(async (post) => {
     const author = await fetchUser(post.userId);
     container.innerHTML += `
-  <div class="col-12 mb-4 card-container"> <!-- Utiliser col-12 pour une carte pleine largeur sur petit écran -->
+  <div class="col-12 mb-4 card-container">
     <div class="card shadow-lg h-100 ">
       <div class="card-body">
         <!-- Auteur, icône save et menu des trois points -->
@@ -208,8 +208,21 @@ function displayNews(news) {
 }
 
 function showError(message) {
+  const container = document.getElementById("news-container");
+
+  container.classList.add("d-flex", "justify-content-center", "align-items-center");
+
+  container.innerHTML = `
+  <div class="alert alert-danger d-flex justify-content-between align-items-center fade show col-11">
+      <span style="font-size:30;" class="fw-bold">${message}</span>
+      <img src="./assets/error.png" alt="Error Icon"></img>
+  </div>
+  `;
+
 
 }
+
+
 
 document.addEventListener("DOMContentLoaded", fetchLatestNews);
 
