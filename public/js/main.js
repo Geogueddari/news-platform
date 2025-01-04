@@ -1,18 +1,30 @@
 async function fetchLatestNews() {
   try {
-    const response = await fetch("https://dummyjson.com/posts");
+    const response = await fetch("/api/news");
     const data = await response.json();
-    displayNews(data.posts);
+    if (response.ok) {
+      displayNews(data.posts);
+    } else {
+      throw new Error(data.message);
+    }
   } catch (error) {
     console.error("Erreur:", error);
-    showError("Impossible de charger les articles");
+    showError(error.message);
   }
 }
 
 async function fetchUser(userId) {
-  const response = await fetch(`https://dummyjson.com/users/${userId}`);
-  const data = await response.json();
-  return data;
+  try{
+    const response = await fetch(`/api/users/${userId}`);
+    const data = await response.json();
+    if (response.ok) {
+      return data;
+    } else {
+      throw new Error(data.message);
+    }
+  }catch(error){
+    console.error("Erreur:", error);
+  }
 }
 
 function displayNews(news) {
@@ -210,7 +222,11 @@ function displayNews(news) {
 function showError(message) {
   const container = document.getElementById("news-container");
 
-  container.classList.add("d-flex", "justify-content-center", "align-items-center");
+  container.classList.add(
+    "d-flex",
+    "justify-content-center",
+    "align-items-center"
+  );
 
   container.innerHTML = `
   <div class="alert alert-danger d-flex justify-content-between align-items-center fade show col-11">
@@ -218,11 +234,7 @@ function showError(message) {
       <img src="./assets/error.png" alt="Error Icon"></img>
   </div>
   `;
-
-
 }
-
-
 
 document.addEventListener("DOMContentLoaded", fetchLatestNews);
 
