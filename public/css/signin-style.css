@@ -114,3 +114,35 @@ body {
   z-index: -1;
   background: linear-gradient(45deg, #2c5364, #203a43, #0f2027);
 }
+
+.login-error {
+  animation: error_animation 0.3s ease-in-out forwards;
+}
+
+@keyframes error_animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.login-success {
+  animation: success_animation 0.3s ease-in-out forwards;
+}
+
+@keyframes success_animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

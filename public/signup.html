@@ -21,10 +21,10 @@
         <div class="text-center mt-4 name">
             LinkSphere
         </div>
-        <form class="p-3 mt-3">
+        <form id="form" class="p-3 mt-3" >
             <div class="form-field d-flex align-items-center">
                 <i class="bi bi-person"></i>
-                <input type="text" name="fullName" id="fullName" placeholder="Full Name" required>
+                <input type="text" name="userName" id="userName" placeholder="User Name" required>
             </div>
             <div class="form-field d-flex align-items-center">
                 <i class="bi bi-envelope"></i>
@@ -40,13 +40,17 @@
             </div>
             <button class="btn btn-primary mt-3 w-100">Sign Up</button>
         </form>
+
+        <div id="message" class="text-center mt-3"></div>
+
         <div class="text-center fs-6">
-            Already have an account? <a href="#">Login</a>
+            Already have an account? <a href="./signin.html">Login</a>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/particles.min.js"></script>
     <script src="./js/particalesJS.js"></script>
+    <script src="./js/signup.js"></script>
 </body>
 
 </html>
