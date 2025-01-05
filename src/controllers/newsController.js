@@ -25,7 +25,7 @@ const newsController = {
     async createNews(req, res) {
         const newArticle = req.body;
         try {
-            const response = await axios.post(DUMMY_JSON_URL, newArticle);
+            const response = await axios.post(`${DUMMY_JSON_URL}/add`, newArticle);
             res.status(201).json(response.data);
         } catch (error) {
             res.status(500).json({ message: "Impossible de créer l'article" });
