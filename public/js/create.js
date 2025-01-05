@@ -33,7 +33,7 @@ articleForm.addEventListener('submit', async (event) => {
         
     } catch (error) {
         message.textContent = 'Une erreur est survenue. Veuillez réessayer.';
-        message.className = 'alert alert-danger';
+        message.className = 'alert alert-danger create-error';
         message.style.display = 'block';
     }
 });
