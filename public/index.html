@@ -1,208 +1,450 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News App</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="./css/main-style.css">
+    <title>LinkSphere</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM3b5lA7T9p2Zg6vYl+7w2nQxvx2lv2AqxFg6P5" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v9.2.4/ol.css">
+    <link rel="stylesheet" href="./css/welcom.css">
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row navbar-sticky">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <div class="container">
-                    <a class="navbar-brand" href="/">News App</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav me-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="./news.html">Articles</a>
+    <!--  ********************************************************************************************************  NAV BAR  ********************************************************************************************************-->
+    <nav class="navbar navbar-expand-lg bg-dark-subtle fixed-top">
+        <div class="container-fluid align-items-center ">
+
+            <a class="navbar-brand fs-2 p-0 me-1" style="color:#17a;" id="suckless_tag" href="#sucless_tag">
+                <img src="./assets/LinkSphere.png" alt="LinkSphere_logo" height="50" width="50">
+                LinkSphere
+            </a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse mt-2" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0  ">
+
+                    <li class="nav-item fs-5">
+                        <a class="nav-link disabled fst-italic text-nowrap" id="suckless_description"
+                            aria-disabled="true">Get latest news</a>
+                    </li>
+
+
+                    <li class="nav-item fs-6 mt-1">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Acceil</a>
+                    </li>
+
+
+                    <li class="nav-item dropdown fs-6 mt-1">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="./linkSphereDescription.html">
+                                    <img src="./assets/newsLogo.png" alt="LinkSphere_logo" height="30" width="30">
+                                    LinkSphere News
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./create.html">Créer</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./update.html">Modifier</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./delete.html">Supprimer</a>
-                            </li>
+                            <li><a class="dropdown-item" href="#">LinkSphere Chats (working in)</a></li>
+                            <li><a class="dropdown-item" href="#">LinkSphere Pages (working in)</a></li>
                         </ul>
-                        <form class="d-flex me-4">
-                            <div class="input-group">
-                                <input class="form-control form-control-lg" type="search" placeholder="Search"
-                                    aria-label="Search">
-                                <button class="btn btn-info px-4" type="submit">
-                                    <i class="bi bi-search"></i>
-                                </button>
+                    </li>
+
+
+                    <li class="nav-item fs-6 mt-1">
+                        <a class="nav-link " href="#">Contacts</a>
+                    </li>
+
+                    <li class="nav-item fs-6 mt-1">
+                        <a class="nav-link " href="#">Help</a>
+                    </li>
+                </ul>
+
+
+                <form class="d-flex fs-5" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary me-2" type="submit">Search</button>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="darkModeSwitch"
+                            title="Switch between light and dark mode">
+                        <label class="form-check-label" for="darkModeSwitch"></label>
+                    </div>
+                </form>
+                <div class="form-check form-switch">
+                    <a href="./signin.html" class="btn me-2 fw-bold btn-signin text-dark"
+                        style="background-color: rgb(255, 230, 0);">Sign
+                        In</a>
+                    <a href="./signup.html" class="btn btn-primary fw-bold">Sign Up</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+    <main>
+        <!--  ******************************************************************************************************** CAROUSEL  ********************************************************************************************************-->
+
+
+        <div id="carousel" class="carousel slide" data-bs-slide="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active c-state"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" class="c-state"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" class="c-state"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" class="c-state"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active c-item">
+                    <img src="https://picsum.photos/500/300" class="d-block w-100 c-img" alt="slide1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="fs-1 text-light">Pub</h5>
+                        <p class="fs-3 text-light">Description</p>
+                        <button type="button" class="btn btn-primary">Book a tour</button>
+                    </div>
+                </div>
+                <div class="carousel-item c-item">
+                    <img src="https://picsum.photos/501/301" class="d-block w-100 c-img" alt="slide2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="fs-1 text-light">Pub</h5>
+                        <p class="fs-3 text-light">Description</p>
+                        <button type="button" class="btn btn-primary">Book a tour</button>
+                    </div>
+                </div>
+                <div class="carousel-item c-item">
+                    <img src="https://picsum.photos/502/302" class="d-block w-100 c-img" alt="slide3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="fs-1 text-light">Pub</h5>
+                        <p class="fs-3 text-light">Description</p>
+                        <button type="button" class="btn btn-primary">Book a tour</button>
+                    </div>
+                </div>
+                <div class="carousel-item c-item">
+                    <img src="https://picsum.photos/503/303" class="d-block w-100 c-img" alt="slide4">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="fs-1 text-light">Pub</h5>
+                        <p class="fs-3 text-light">Description</p>
+                        <button type="button" class="btn btn-primary">Book a tour</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-black previous" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-black next" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!--  ******************************************************************************************************** CARDS  ********************************************************************************************************-->
+
+
+
+        <div class="container mx-auto mt-5">
+            <h1 class="mb-5 text-decoration-underline">Our Products : </h1>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="row g-0 flex-md-row flex-column-reverse">
+                            <div class="col-md-4 col-lg-12">
+                                <img src="./assets/newsLogo.png" class="img-fluid rounded-start" alt="dwm">
                             </div>
-                        </form>
-                        <div>
-                            <a href="./signin.html" class="btn me-2 fw-bold btn-signin" style="background-color: rgb(255, 230, 0);">Sign
-                                In</a>
-                            <a href="./signup.html" class="btn btn-outline-light fw-bold">Sign Up</a>
+                            <div class="col-md-8 col-lg-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">LinkSphere News</h5>
+                                    <p class="card-text">
+                                        LinkSphere News is a modern news application that keeps you connected to the
+                                        world.
+                                        Get personalized news feeds, real-time updates, and trending stories all in one
+                                        place. With its sleek design and offline reading feature, LinkShere ensures you
+                                        never miss what matters most.
+                                    </p>
+                                    <a href="././linkSphereDescription.html" class="btn btn-primary">Learn more</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </nav>
 
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="row g-0 flex-md-row flex-column-reverse">
+                            <div class="col-md-4 col-lg-12">
+                                <img src="assets/CahtsLogo.png" class="img-fluid rounded-start" alt="St">
+                            </div>
+                            <div class="col-md-8 col-lg-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">LinkSphere Chats</h5>
+                                    <p class="card-text">
+                                        LinkSphere Chats is a modern communication application that keeps you connected
+                                        with your friends and community.
+                                        Enjoy seamless conversations, real-time messaging, and an intuitive design that
+                                        makes staying in touch easier than ever.
+                                        With its sleek interface and offline message saving, LinkSphere ensures your
+                                        chats are always within reach.
+                                    </p>
+                                    <a href="#" class="btn btn-primary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="row g-0 flex-md-row flex-column-reverse">
+                            <div class="col-md-4 col-lg-12">
+                                <img src="assets/PagesLogo.png" class="img-fluid rounded-start" alt="Alacritty">
+                            </div>
+                            <div class="col-md-8 col-lg-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">LinkSphere Pages</h5>
+                                    <p class="card-text">
+                                        LinkSphere Pages is a powerful tool to create, manage, and explore content pages
+                                        effortlessly.
+                                        Whether for personal projects or professional needs, LinkSphere Pages helps you
+                                        organize information with style.
+                                        Its user-friendly design and offline access ensure your content is always at
+                                        your fingertips.
+                                    </p>
+                                    <a href="#" class="btn btn-primary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--  ******************************************************************************************************** Profiles  ********************************************************************************************************-->
+        <hr>
+
+        <div class="container my-5 mx-auto">
+            <h1 class="mb-5 text-decoration-underline">Our Team : </h1>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card text-center p-3 h-100 d-flex flex-column">
+                        <img src="./assets/zouani.jpg" class="card-img-top rounded-circle mx-auto" alt="Profile Image"
+                            style="width: 150px; height: 150px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Zouani Youness</h5>
+                            <p class="card-text">Software Architect/ Academic and Professional trainer</p>
+                        </div>
+                        <div class="mt-auto">
+                            <a href="#" class="btn btn-primary">Show more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card text-center p-3 h-100 d-flex flex-column">
+                        <img src="./assets/abdeljabar.jpg" class="card-img-top rounded-circle mx-auto"
+                            alt="Profile Image" style="width: 150px; height: 150px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Elgaddari Abdeljabbar</h5>
+                            <p class="card-text">GIS & software engineer in Training</p>
+                            <h1 class="text-primary fw-bold">
+                                <i class="fas fa-user-tie me-2"></i>Founder
+                            </h1>
+                        </div>
+                        <div class="mt-auto">
+                            <a href="#" class="btn btn-primary">Show more</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card text-center p-3 h-100 d-flex flex-column">
+                        <img src="./assets/LinusTorvalds.jpg" class="card-img-top rounded-circle mx-auto"
+                            alt="Profile Image" style="width: 150px; height: 150px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Linus Torvalds</h5>
+                            <p class="card-text">
+                                Linus Torvalds is a Finnish software engineer best known as the creator of the Linux
+                                operating system and Git version control system.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <a href="#" class="btn btn-primary">Show more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
-        <div class="row my-0 p-0">
-            <!-- Sidebar -->
-            <aside class="col-md-3 ps-0 pe-0 pt-0 sidebar m-0">
-                <div class="d-flex flex-column bg-light border-end pb-0 p-3 pt-0">
-                    <!-- Logo -->
-                    <div class="text-center app-name fw-bold fst-italic">
-                        <img src="assets/AppLogo.png" alt="Logo" class="img-fluid" style="max-width: 100px;">
-                        LinkSphere
-                    </div>
+    </main>
+    <!--  ******************************************************************************************************** FOOTER  ********************************************************************************************************-->
 
-                    <!-- Navigation -->
-                    <nav class="w-100">
-                        <ul class="nav flex-column fw-bold">
-                            <li class="nav-item mb-3">
-                                <a href="#"
-                                    class="nav-link d-flex align-items-center text-dark p-2 rounded hover-effect">
-                                    <i class="bi bi-house-door-fill me-2 large-icon"></i>
-                                    <span>Accueil</span>
-                                </a>
-                            </li>
-                            <li class="nav-item mb-3">
-                                <a href="#"
-                                    class="nav-link d-flex align-items-center text-dark p-2 rounded hover-effect">
-                                    <i class="bi bi-search me-2 large-icon"></i>
-                                    <span>Explorer</span>
-                                </a>
-                            </li>
-                            <li class="nav-item mb-3 position-relative">
-                                <a href="#"
-                                    class="nav-link d-flex align-items-center text-dark p-2 rounded hover-effect">
-                                    <i class="bi bi-bell-fill me-2 position-relative large-icon">
-                                        <span
-                                            class="badge bg-danger text-white position-absolute top-0 start-100 translate-middle rounded-pill"
-                                            style="font-size: 10px;">
-                                            3
-                                        </span>
-                                    </i>
-                                    <span>Notifications</span>
-                                </a>
-                            </li>
-                            <li class="nav-item mb-3 position-relative">
-                                <a href="#"
-                                    class="nav-link d-flex align-items-center text-dark p-2 rounded hover-effect">
-                                    <i class="bi bi-envelope-fill me-2 position-relative large-icon">
-                                        <span
-                                            class="badge bg-primary text-white position-absolute top-0 start-100 translate-middle rounded-pill"
-                                            style="font-size: 10px;">
-                                            5
-                                        </span>
-                                    </i>
-                                    <span>Messages</span>
-                                </a>
-                            </li>
-                            <li class="nav-item mb-3">
-                                <a href="#"
-                                    class="nav-link d-flex align-items-center text-dark p-2 rounded hover-effect">
-                                    <i class="bi bi-person-fill me-2 large-icon"></i>
-                                    <span>Profil</span>
-                                </a>
-                            </li>
-                            <li class="nav-item mb-3">
-                                <a href="#"
-                                    class="nav-link d-flex align-items-center text-dark p-2 rounded hover-effect">
-                                    <i class="bi bi-three-dots me-2 large-icon"></i>
-                                    <span>Plus</span>
-                                </a>
-                            </li>
-                            <li class="nav-item mb-3">
-                                <a href="#"
-                                    class="nav-link d-flex align-items-center text-dark p-2 rounded hover-effect">
-                                    <i class="bi bi-box-arrow-right me-2 large-icon"></i>
-                                    <span>Log Out</span>
-                                </a>
-                            </li>
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted mb-3">
 
-                        </ul>
-                    </nav>
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
 
-                    <!-- Settings button -->
-                    <button class="btn btn-light mt-auto d-flex align-items-center justify-content-center border-top">
-                        <i class="bi bi-gear-fill me-2 large-icon"></i>
-                        <span>Paramètres</span>
-                    </button>
-                    <!-- bookmarks button -->
-                    <button class="btn btn-light mt-auto d-flex align-items-center justify-content-center border-top">
-                        <i class="bi bi-bookmark me-2 large-icon" style="color: rgb(255, 153, 0);"></i>
-                        <span>bookmarks</span>
-                    </button>
+            <div class="me-5 d-none d-lg-block">
+                <span>About us :</span>
+            </div>
 
-                </div>
-            </aside>
 
-            <!-- Section des derniers articles -->
-            <section id="latest-news" class="col-md-6 mt-4">
-                <h2 class="mb-4">Last Posts</h2>
-                <div id="news-container" class="row gx-4 gy-4">
-                    <!-- Les articles seront ajoutés ici dynamiquement -->
-                </div>
-            </section>
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-github" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                    </svg>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                    </svg>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                    </svg>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                    </svg>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-twitter-x" viewBox="0 0 16 16">
+                        <path
+                            d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                    </svg>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-google" viewBox="0 0 16 16">
+                        <path
+                            d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z" />
+                    </svg>
+                </a>
+            </div>
 
-            <!-- Publicités -->
-            <aside class="col-md-3 pe-0 pt-0 advertisements">
-                <div class=" d-flex flex-column bg-light border-start pb-0 p-3 pub">
-                    <!-- Titre de la section -->
-                    <h3 class="text-center mb-4 text-uppercase fw-bold text-primary">
-                        <img src="assets/pubs.svg" alt="pubs" class="img-fluid" style="max-width: 100px;width:40px;height:40px;">
-                        latest
-                    </h3>
+        </section>
 
-                    <div class="advertisement mb-4 p-3 rounded shadow-lg bg-white">
-                        <h5 class="fw-bold mb-2 text-dark">News</h5>
-                        <img src="https://picsum.photos/300/251" alt="Publicité 1" class="img-fluid rounded mb-2">
-                        <p class="text-muted">Description de la publicité 1 ici. Découvrez nos dernières actualités!</p>
-                        <div class="d-flex justify-content-between align-items-center mt-2">
-                            <a href="#" class="btn btn-outline-primary btn-sm">En savoir plus</a>
-                            <i class="bi bi-heart-fill text-danger"></i>
-                        </div>
-                    </div>
 
-                    <div class="advertisement mb-4 p-3 rounded shadow-lg bg-white">
-                        <h5 class="fw-bold mb-2 text-dark">Publicité 2</h5>
-                        <img src="https://picsum.photos/300/250" alt="Publicité 1" class="img-fluid rounded mb-2">
-                        <p class="text-muted">Description de la publicité 2 ici. Découvrez nos offres exceptionnelles!
+
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+
+                <div class="row mt-3">
+
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>LinkSphere
+                        </h6>
+                        <p>
+
+                            LinkSphere is a modern news application that keeps you connected to the
+                            world.
+                            Get personalized news feeds, real-time updates, and trending stories all in one
+                            place. With its sleek design and offline reading feature, LinkShere ensures you
+                            never miss what matters most.
                         </p>
-                        <div class="d-flex justify-content-between align-items-center mt-2">
-                            <a href="#" class="btn btn-outline-primary btn-sm">Voir plus</a>
-                            <i class="bi bi-bell-fill text-warning"></i>
-                        </div>
                     </div>
 
-                    <div class="advertisement mb-4 p-3 rounded shadow-lg bg-white">
-                        <h5 class="fw-bold mb-2 text-dark">Publicité 3</h5>
-                        <img src="https://picsum.photos/300/252" alt="Publicité 1" class="img-fluid rounded mb-2">
-                        <p class="text-muted">Description de la publicité 3 ici. Explorez nos nouveaux produits!</p>
-                        <div class="d-flex justify-content-between align-items-center mt-2">
-                            <a href="#" class="btn btn-outline-primary btn-sm">Découvrir</a>
-                            <i class="bi bi-star-fill text-info"></i>
-                        </div>
+
+
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">LinkSphere News</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">LinkSphere Chats</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">LinkSphere Pages</a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
+                            </svg> EHTP , Morocco</p>
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                            </svg>
+                            link.sphere.community@gmail.org.ma
+                        </p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-telephone" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+                            </svg> + 212 234 567 881</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-telephone" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+                            </svg></i> + 212 234 567 890</p>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3 col-xl-3 mb-4 container mx-auto" id="map"
+                        style="height: 300px; width: 90%;">
+
+                    </div>
+
+
+                    <div class="col-12 col-md-4 col-lg-3 col-xl-3 mb-4 container mx-auto" id="map"
+                        style="height: 300px; width: 90%;">
+
                     </div>
                 </div>
-            </aside>
-
-        </div>
-    </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/main.js"></script>
+            </div>
+        </section>
+
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v9.2.4/dist/ol.js"></script>
+    <script type="module" src="./js/welcom.js"></script>
 </body>
 
 </html>

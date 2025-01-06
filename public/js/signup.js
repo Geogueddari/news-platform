@@ -48,6 +48,9 @@ form.addEventListener('submit', async (event) => {
         if (response.ok) {
             message.innerHTML = `<i class="bi bi-check-circle me-2"></i>${log.message}`;
             message.className = "alert alert-success d-flex justify-content-center align-items-center fade show signup-success";
+            setTimeout(() => {
+                window.location.href = './signin.html';
+            }, 1000);
         } else {
             message.innerHTML = `<i class="bi bi-x-circle me-2"></i>${log.message}`;
             message.className = "alert alert-danger d-flex justify-content-center align-items-center fade show signup-error";
