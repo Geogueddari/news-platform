@@ -23,7 +23,7 @@ deleteArticleForm.addEventListener('submit', async (event) => {
 
             // Attendre un peu avant de rediriger vers la liste des articles
             setTimeout(() => {
-                window.location.href = './index.html';
+                window.location.href = './welcom.html';
             }, 1000);
         } else {
             message.textContent = `Erreur : ${result.message || 'Impossible de supprimer l\'article.'}`;
